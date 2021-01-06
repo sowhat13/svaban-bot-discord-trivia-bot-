@@ -165,7 +165,7 @@ let loading = true
 
       answer = "";
 
-      if (triviaCount < 3) {
+      if (triviaCount < 7) {
         receivedMessage.channel
           .send(`${triviaCount + 2}. soru geliyor... ⚽⚽⚽ :three:`)
           .then((msg) => {
