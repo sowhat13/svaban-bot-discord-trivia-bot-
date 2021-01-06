@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js')
 const client = new Discord.Client();
 triviaCount = 0;
 lastQuestion = -1;
