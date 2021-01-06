@@ -328,7 +328,7 @@ let results = [
     answer: "Leonardo Da Vinci",
   },
   {
-    question: `Bir dönem Pelé, Franz Beckenbauer, Carlos Alberto ve Yasin Özdenak ‘ın da oynadığı ABD futbol takımı hangisidir? https://youtu.be/HgaggqtmEew`,
+    question: `Bir dönem Pelé, Franz Beckenbauer, Carlos Alberto ve Yasin Özdenak ‘ın da oynadığı ABD futbol takımı hangisidir? `,
     answer: "New York Cosmos",
   },
   {
@@ -338,14 +338,14 @@ let results = [
   {
     question: `Bu bayrak hangi ülkeye aittir?`,
     photo:
-      "https://upload.wikimedia.org/wikipedia/commons/0/0a/Flag_of_Jamaica.svg",
+      "https://cdn.countryflags.com/thumbs/jamaica/flag-400.png",
     answer: "Jamaika",
   },
   {
     question: `Bu neyin amblemidir?`,
     answer: "NATO",
     photo:
-      "https://img-s2.onedio.com/id-578e2390843eaeb3570c1db1/rev-0/w-205/h-205/f-jpg-webp/s-b20919dece6275cc5892969f9f6f8d32f0ec9dd9.webp",
+      "https://foto.haberler.com/haber/2020/02/28/nato-nedir-nato-uyeleri-kimler-nato-4-madde-12963371_6570_amp.jpg",
   },
   {
     question: `Bu neyin amblemidir?`,
