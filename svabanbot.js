@@ -17,7 +17,7 @@ questions = [...questionPool]
 client.on("ready", () => {
   console.log("Connected as " + client.user.tag);
 
-  client.user.setActivity("Enes Batur", { type: "WATCHING" });
+  client.user.setActivity("$yarışma", { type: "PLAYING" });
 
   client.guilds.cache.forEach((guild) => {
     guild.channels.cache.forEach((channel) => {});
@@ -51,7 +51,7 @@ function processCommand(receivedMessage) {
 }
 
 function triviaCommand(arguments, receivedMessage) {
-  let trivia = false;
+ 
 
   if (arguments.length == 0) {
     trivia = true;
