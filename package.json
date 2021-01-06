@@ -5,11 +5,12 @@
   "main": "svabanbot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node svabanbot.js"
+    "start": "node svabanbot.js"
   },
   "author": "Emre Özer",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "discord.js": "^12.5.1"
   }
 }
