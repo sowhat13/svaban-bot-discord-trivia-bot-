@@ -423,6 +423,79 @@ answer:'Pablo Picasso'
     question: `Bu botun discord etiketi kaçtır?`,
     answer: "4595",
   },
+  {
+    question: `Uşak ilinin plaka numarası kaçtır?`,
+    answer: "64",
+  },
+
+  {
+    question: `Chris Paul kaç cmdir?`,
+    answer: "185",
+  },
+  {
+    question: `Michael Jordan, 1984 Nba draftlarında kaçıncı sıradan seçilmiştir?`,
+    answer: "3",
+  },
+  {
+    question: `League of legends ilk çıktığında kaç şampiyon vardı?`,
+    answer: "40",
+  },
+  {
+    question: `Aphelios'un ultisinin adı nedir?`,
+    answer: "Ay Işığı Nöbeti",
+  },
+  {
+    question: `Bard'ın ultisinin adı nedir?`,
+    answer: "Kader Birliği",
+  },
+  {
+    question: `Lee Sin'in ultisinin adı nedir?`,
+    answer: "Ejderhanın Gazabı",
+  },
+  {
+    question: `Varus'un ultisinin adı nedir?`,
+    answer: "Musibet Zinciri",
+  },
+  {
+    question: `Türkiye'nin en kalabalık ilçesi neresidir?`,
+    answer: "Çankaya",
+  },
+  {
+    question: `Sabah namazı kaç rekattır?`,
+    answer: "4",
+  },
+  {
+    question: `Bir sene kaç saattir?`,
+    answer: "8765",
+  },
+  {
+    question: `Türkiye'nin kaç komşu ülkesi vardır?`,
+    answer: "10",
+  },
+  {
+    question: `Antalyaspor hangi yıl kurulmuştur?`,
+    answer: "1966",
+  },
+  {
+    question: `Pierre-Emerick Aubameyang hangi ülkede doğmuştur?`,
+    answer: "Fransa",
+  },
+  {
+    question: `Pierre-Emerick Aubameyang hangi milli takımda oynamaktadır?`,
+    answer: "Gabon",
+  },
+  {
+    question: `Arsenal tarihinde en çok gol atan oyuncu kimdir?`,
+    answer: "Thierry Henry",
+  },
+  {
+    question: `Fransa futbol liginde en çok şampiyonluk yaşayan takım?`,
+    answer: "Saint-Etienne",
+  },
+  {
+    question: `Zlatan Ibrahimović'in profesyonel futbolculuğa başladığı takım?`,
+    answer: "Malmö",
+  },
 
 ];
 
