@@ -51,7 +51,7 @@ function processCommand(receivedMessage) {
 }
 
 function triviaCommand(arguments, receivedMessage) {
- 
+ trivia = false
 
   if (arguments.length == 0) {
     trivia = true;
@@ -205,6 +205,8 @@ const askQuestion = function (receivedMessage) {
 
         questions = [...questionPool];
         scores = [];
+ trivia = false
+
       }
     }
   });

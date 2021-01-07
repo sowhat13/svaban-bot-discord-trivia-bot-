@@ -571,8 +571,6 @@ answer:'Pablo Picasso'
 
 ];
 
-console.log(results.length)
 
-console.log();
 
 module.exports = results;
