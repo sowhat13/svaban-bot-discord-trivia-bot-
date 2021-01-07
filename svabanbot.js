@@ -51,7 +51,7 @@ function processCommand(receivedMessage) {
 }
 
 function triviaCommand(arguments, receivedMessage) {
- trivia = false
+  trivia = false
 
   if (arguments.length == 0) {
     trivia = true;
@@ -135,7 +135,7 @@ const askQuestion = function (receivedMessage) {
           if(person != receivedMessage.author.username ){
             skipCount.push(`${receivedMessage.author.username}`)
             receivedMessage.channel.send(`Geçme sayacı ${skipCount.length}/2 (${skipCount})`)
-        
+            receivedMessage.content = `${Math.random() * 1000}`
           }
         })
        
@@ -148,7 +148,7 @@ const askQuestion = function (receivedMessage) {
     
 
       if(skipCount.length > 1){
-
+        skipCount.splice(0, skipCount.length)
         askQuestion(receivedMessage)
       }
     
