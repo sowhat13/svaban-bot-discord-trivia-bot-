@@ -559,7 +559,15 @@ answer:'Pablo Picasso'
 {
     question: " Yılmaz Vural 2012-2013 yılları arasında hangi takımı çalıştırmıştır?",
     answer: "Elazığspor",
-  }
+  },
+  {
+    question: " 13 ün karesi kaç eder?",
+    answer: "169",
+  },
+  {
+    question: " Tarihte bilinen ilk yazılı antlaşma hangisidir?",
+    answer: "Brezilya",
+  },
 
 ];
 
