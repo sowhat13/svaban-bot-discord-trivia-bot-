@@ -496,8 +496,74 @@ answer:'Pablo Picasso'
     question: `Zlatan Ibrahimović'in profesyonel futbolculuğa başladığı takım?`,
     answer: "Malmö",
   },
+  {
+    question: "Tarihte bilinen ilk yazılı antlaşma hangisidir ?",
+    answer: "Kadeş",
+  },
+{
+    question: "Letonyanın başkenti neresidir?",
+    answer: "Riga",
+  },
+{
+    question: " Fenerbahçe 2007-2008 sezonunda şampiyonlar liginde gruptan kaç puanla çıkmıştır?",
+    answer: "11",
+  },
+{
+    question: " 2000-2001 sezonu Galatasaraya transfer olan Mario Jardel toplam 43 maçta kaç gol atmıştır?",
+    answer: "34",
+  },
+{
+    question: " Türkiye kupasını ilk kez kazanan anadolu takımı hangisidir?",
+    answer: "Altay",
+  },
+{
+    question: " Fatih Sultan Mehmet kaç yaşında vefat etmiştir?",
+    answer: "49",
+  },
+{
+    question: " Türkler Anadoluya ilk kez hangi savaşla ayak basmıştır?",
+    answer: "Malazgirt Savaşı",
+  },
+{
+    question: " İrlanda Cumhuriyetinin başkenti nedir?",
+    answer: "Dublin",
+  },
+{
+    question: " Tarihte ilk Türkçe sözlük olarak bilinen Dîvânu Lugâti't-Türkün yazarı kimdir?",
+    answer: "Kaşgarlı Mahmud",
+  },
+{
+    question: " Türk tarihinin en büyük deniz savaşı olan Preveze Deniz Savaşı hangi padişah döneminde yapılmıştır?",
+    answer: "Kanuni Sultan Süleyman",
+  },
+{
+    question: " San Marinonu başkenti nedir?",
+    answer: "San Marino",
+  },
+{
+    question: " Hüseyin Can Canbay İngilterede eksik kadro kaldığı için hangi ırktan oyuncuyu Türk kontenjanında oynatmıştır?",
+    answer: "Arap",
+  },
+{
+    question: " Alişan Kazanın en sevmediği alkollü içecek hangisidir?",
+    answer: "Bira",
+  },
+{
+    question: " Hüseyin Can Canbayın anneannesinin adı nedir?",
+    answer: "Yaşar",
+  },
+{
+    question: " Türkiyede harf devrimi hangi yıl yapılmıştır?",
+    answer: "1928",
+  },
+{
+    question: " Yılmaz Vural 2012-2013 yılları arasında hangi takımı çalıştırmıştır?",
+    answer: "Elazığspor",
+  }
 
 ];
+
+console.log(results.length)
 
 console.log();
 

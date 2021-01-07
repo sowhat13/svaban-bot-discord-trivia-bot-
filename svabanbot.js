@@ -106,7 +106,7 @@ const askQuestion = function (receivedMessage) {
 
   let questionNumber = Math.floor(Math.random() * Math.floor(questions.length));
   if(questions[questionNumber].photo){
-let loading = true
+
 
  let questionPhoto = new Discord.MessageAttachment(questions[questionNumber].photo)
 
@@ -122,13 +122,14 @@ let loading = true
 
   client.on("message", (receivedMessage) => {
     if (receivedMessage.author == client.user) {
-    }
+   return }
 
     if (receivedMessage.content.toLowerCase() == `geç`){
 
       if(skipCount.length === 0) {
     skipCount.push(`${receivedMessage.author.username}`)
-    receivedMessage.channel.send(`Geçme sayacı ${skipCount.length}/2 (${skipCount}) `)
+     receivedMessage.channel.send(`Geçme sayacı ${skipCount.length}/2 (${skipCount}) `)
+     receivedMessage.content = `${Math.random()}`
       }else{
         skipCount.filter(person=> {
           if(person != receivedMessage.author.username ){
@@ -137,16 +138,17 @@ let loading = true
         
           }
         })
+       
+
       }
 
 
 
-      receivedMessage.content = ''
-
-
+      
     
 
       if(skipCount.length > 1){
+
         askQuestion(receivedMessage)
       }
     
@@ -163,7 +165,7 @@ let loading = true
 
      
 
-      answer = "";
+      answer = '';
 
       if (triviaCount < 7) {
         receivedMessage.channel
