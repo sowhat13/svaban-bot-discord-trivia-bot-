@@ -1,18 +1,14 @@
-const Discord = require('discord.js')
+const Discord = require("discord.js");
 const client = new Discord.Client();
 triviaCount = 0;
 lastQuestion = -1;
 scores = [];
 const { prefix, token } = require("./config.json");
-const questionPool = require('./questionPool')
+const questionPool = require("./questionPool");
 
-const skipCount = []
+const skipCount = [];
 
-
-
-
-questions = [...questionPool]
-
+questions = [...questionPool];
 
 client.on("ready", () => {
   console.log("Connected as " + client.user.tag);
@@ -21,9 +17,7 @@ client.on("ready", () => {
 
   client.guilds.cache.forEach((guild) => {
     guild.channels.cache.forEach((channel) => {});
-
   });
-
 });
 
 client.on("message", (receivedMessage) => {
@@ -41,17 +35,16 @@ function processCommand(receivedMessage) {
   let primaryCommand = splitCommand[0];
   let arguments = splitCommand.slice(1);
 
-  if (primaryCommand === "yarışma" ) {
+  if (primaryCommand === "yarışma") {
     triviaCommand(arguments, receivedMessage);
     trivia = true;
-  }else{
-    receivedMessage.channel
-    .send(`Ne diyon birader? ${receivedMessage.author}`)
+  } else {
+    receivedMessage.channel.send(`Ne diyon birader? ${receivedMessage.author}`);
   }
 }
 
 function triviaCommand(arguments, receivedMessage) {
-  trivia = false
+  trivia = false;
 
   if (arguments.length == 0) {
     trivia = true;
@@ -71,49 +64,42 @@ function triviaCommand(arguments, receivedMessage) {
         }, 3000);
       });
 
-      receivedMessage.channel
-      .send(' `Her soru 5 puandır. Eğer iki kişi "geç" yazarsa mevcut soru geçilir. Geçilen sorular haricinde toplam 10 soru sorulacaktır. Görselli sorularda, görselin yüklenmesi zaman alabilir. Yarışmayı en çok soruya doğru cevap veren kazanır, eğer iki kişi aynı sayıda soru bildiyse, yüce bot kimin kazandığına karar verir. `' + `Toplam soru sayısı ${questions.length}`)
+    receivedMessage.channel.send(
+      ' `Her soru 5 puandır. Eğer iki kişi "geç" yazarsa mevcut soru geçilir. Geçilen sorular haricinde toplam 10 soru sorulacaktır. Görselli sorularda, görselin yüklenmesi zaman alabilir. Yarışmayı en çok soruya doğru cevap veren kazanır, eğer iki kişi aynı sayıda soru bildiyse, yüce bot kimin kazandığına karar verir. `' +
+        `Toplam soru sayısı ${questions.length}`
+    );
   }
 
   setTimeout(function () {
     if (trivia) {
-        triviaCount = 0;
+      triviaCount = 0;
 
-        questions = [...questionPool];
-        scores = [];
+      questions = [...questionPool];
+      scores = [];
       askQuestion(receivedMessage);
-    }
-    else {
-        receivedMessage.channel.send(
-            `Yarışmamız burada bitiyor, katılan herkese +rep... `
-          );
-  
-          triviaCount = 0;
-  
-          questions = [...questionPool];
-          scores = [];
+    } else {
+      receivedMessage.channel.send(
+        `Yarışmamız burada bitiyor, katılan herkese +rep... `
+      );
+
+      triviaCount = 0;
+
+      questions = [...questionPool];
+      scores = [];
     }
   }, 3500);
 }
 
-
-
-
 const askQuestion = function (receivedMessage) {
-   
-  skipCount.splice(0, skipCount.length)
-
+  skipCount.splice(0, skipCount.length);
 
   let questionNumber = Math.floor(Math.random() * Math.floor(questions.length));
-  if(questions[questionNumber].photo){
+  if (questions[questionNumber].photo) {
+    let questionPhoto = new Discord.MessageAttachment(
+      questions[questionNumber].photo
+    );
 
-
- let questionPhoto = new Discord.MessageAttachment(questions[questionNumber].photo)
-
-
-
- receivedMessage.channel.send(questionPhoto)
-
+    receivedMessage.channel.send(questionPhoto);
   }
   receivedMessage.channel.send(`${questions[questionNumber].question} `);
   answer = questions[questionNumber].answer;
@@ -122,39 +108,33 @@ const askQuestion = function (receivedMessage) {
 
   client.on("message", (receivedMessage) => {
     if (receivedMessage.author == client.user) {
-   return }
-
-    if (receivedMessage.content.toLowerCase() == `geç`){
-
-      if(skipCount.length === 0) {
-    skipCount.push(`${receivedMessage.author.username}`)
-     receivedMessage.channel.send(`Geçme sayacı ${skipCount.length}/2 (${skipCount}) `)
-     receivedMessage.content = `${Math.random()}`
-      }else{
-        skipCount.filter(person=> {
-          if(person != receivedMessage.author.username ){
-            skipCount.push(`${receivedMessage.author.username}`)
-            receivedMessage.channel.send(`Geçme sayacı ${skipCount.length}/2 (${skipCount})`)
-            receivedMessage.content = `${Math.random() * 1000}`
-          }
-        })
-       
-
-      }
-
-
-
-      
-    
-
-      if(skipCount.length > 1){
-        skipCount.splice(0, skipCount.length)
-        askQuestion(receivedMessage)
-      }
-    
+      return;
     }
 
-    
+    if (receivedMessage.content.toLowerCase() == `geç`) {
+      if (skipCount.length === 0) {
+        skipCount.push(`${receivedMessage.author.username}`);
+        receivedMessage.channel.send(
+          `Geçme sayacı ${skipCount.length}/2 (${skipCount}) `
+        );
+        receivedMessage.content = `${Math.random()}`;
+      } else {
+        skipCount.filter((person) => {
+          if (person != receivedMessage.author.username) {
+            skipCount.push(`${receivedMessage.author.username}`);
+            receivedMessage.channel.send(
+              `Geçme sayacı ${skipCount.length}/2 (${skipCount})`
+            );
+            receivedMessage.content = `${Math.random() * 1000}`;
+          }
+        });
+      }
+
+      if (skipCount.length > 1) {
+        skipCount.splice(0, skipCount.length);
+        askQuestion(receivedMessage);
+      }
+    }
 
     if (receivedMessage.content.toLowerCase() == `${answer.toLowerCase()}`) {
       receivedMessage.channel.send(
@@ -163,9 +143,7 @@ const askQuestion = function (receivedMessage) {
 
       scoreTable(receivedMessage.author.username);
 
-     
-
-      answer = '';
+      answer = "";
 
       if (triviaCount < 7) {
         receivedMessage.channel
@@ -186,17 +164,21 @@ const askQuestion = function (receivedMessage) {
             }, 3000);
           });
       } else {
-        Array.prototype.sortBy = function(p) {
-            return this.slice(0).sort(function(a,b) {
-              return (a[p] > b[p]) ? -1 : (a[p] < b[p]) ? 1 : 0;
-            });
-          }
+        Array.prototype.sortBy = function (p) {
+          return this.slice(0).sort(function (a, b) {
+            return a[p] > b[p] ? -1 : a[p] < b[p] ? 1 : 0;
+          });
+        };
 
-          const result = scores.sortBy('score')
+        const result = scores.sortBy("score");
 
         receivedMessage.channel.send(
-            ':trophy: :trophy: :trophy: Yarışmanın kazananı :trophy: :trophy: :trophy:' + ' ```HTTP\n' +  result[0].name + '```' + '  Helaaaal!! '
-          );
+          ":trophy: :trophy: :trophy: Yarışmanın kazananı :trophy: :trophy: :trophy:" +
+            " ```HTTP\n" +
+            result[0].name +
+            "```" +
+            "  Helaaaal!! "
+        );
         receivedMessage.channel.send(
           `Yarışmamız burada bitiyor, katılan herkese +rep... `
         );
@@ -205,37 +187,28 @@ const askQuestion = function (receivedMessage) {
 
         questions = [...questionPool];
         scores = [];
- trivia = false
-
+        trivia = false;
       }
     }
   });
 };
 
 const scoreTable = function (uName) {
-
-if(scores.length == 0) {
+  if (scores.length == 0) {
     scores.push({ name: uName, score: 5 });
-}else{
-   
+  } else {
     function findSame(person) {
-        return person.name == uName;
+      return person.name == uName;
     }
 
-    let result = scores.findIndex(findSame)
+    let result = scores.findIndex(findSame);
 
-if(result > -1){
-    scores[result].score += 5
-}else {
-    scores.push({ name: uName, score: 5 });
-}
-
-}
-
-
-
-  
-
+    if (result > -1) {
+      scores[result].score += 5;
+    } else {
+      scores.push({ name: uName, score: 5 });
+    }
+  }
 };
 
 client.login(process.env.BOT_TOKEN);

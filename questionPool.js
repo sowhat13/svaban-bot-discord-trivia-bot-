@@ -1,35 +1,6 @@
 const axios = require("axios");
 
-// const movies = async function() {
-//     const res = await axios.get(
-//       "https://api.themoviedb.org/3/movie/top_rated?api_key=cffed36e338abe3170a6f5872e6b2de6&language=tr-TR&page=1"
-//     );
-//    this.movie = res.data.results;
 
-//   }
-
-//   const getMovies = async () => {
-//     try {
-//         const res = await axios.get('https://api.themoviedb.org/3/movie/top_rated?api_key=cffed36e338abe3170a6f5872e6b2de6&language=tr-TR&page=20');
-//        const movies = res.data.results
-
-//        if(movies){
-//         const popMovies = movies.filter(movie => movie.vote_count > 3000)
-
-//      let questionMovies =  popMovies.map(movie => {return {question:'Görseldeki filmin adı nedir?', photo: `https://image.tmdb.org/t/p/original${movie.backdrop_path}`, answer: movie.title}})
-
-//      console.log( questionMovies)
-
-//     }
-
-//     } catch (err) {
-//         // Handle Error Here
-//         console.error(err);
-//     }
-
-// };
-
-// getMovies()
 
 let results = [
   {
@@ -61,6 +32,7 @@ let results = [
       "https://image.tmdb.org/t/p/original/poec6RqOKY9iSiIUmfyfPfiLtvB.jpg",
     answer: "Baba 2",
   },
+
   {
     question: "Görseldeki filmin adı nedir?",
     photo:
@@ -161,7 +133,7 @@ let results = [
     question: "Görseldeki filmin adı nedir?",
     photo:
       "https://image.tmdb.org/t/p/original/aUVCJ0HkcJIBrTJYPnTXta8h9Co.jpg",
-    answer: "Örümcek-Adam: Örümcek Evreninde",
+    answer: "Örümcek-Adam",
   },
 
   {
@@ -565,9 +537,14 @@ answer:'Pablo Picasso'
     answer: "169",
   },
   {
-    question: " Tarihte bilinen ilk yazılı antlaşma hangisidir?",
-    answer: "Brezilya",
+    question: " 13 ün karesi kaç eder?",
+    answer: "169",
   },
+  {
+    question: " 13 ün karesi kaç eder?",
+    answer: "169",
+  },
+
 
 ];
 
